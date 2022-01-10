@@ -1,0 +1,174 @@
+﻿@font-face{
+    font-family: 'College';
+
+    src:url('../Fonts/JackportRegularNcv-BeY3.ttf')
+
+
+}
+body {
+    /*background: url('/Images/PicsArt_01-10-06.50.49.jpg') no-repeat center bottom*/
+    padding-bottom: 58px;
+   
+}
+#lik {
+    font-size: 154px;
+}
+#willbb{
+
+    display:none;
+}
+#tp {
+    display: none;
+}
+#page {
+    max-width: 1455px;
+    margin: 0 auto;
+    position: relative;
+    background: white;
+}
+
+header {
+    height: 385px;
+    top:0px;
+    background: #000000 url('/Images/logos430.jpg') no-repeat center bottom;
+    
+    position: relative;
+}
+header .logo {position:absolute; display: block; width:160px; height: 66px;
+            
+}
+
+#links {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#links #MD {
+    margin-left:80%;
+   
+}
+    header div.draftname {
+        position: absolute;
+        height: 230px;
+        width: 30%;
+        top: 0px;
+        left: 75%;
+        /*background: url('/Images/cade1200.jpg') no-repeat center bottom;*/
+    }
+
+header div.draftname h1 {
+    line-height: 1em;
+    margin: 0 0 30px 0;
+    font-size: 24px ;
+    
+}
+#lik h1 {
+    text-align:center;
+    font-size:104px;
+
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+     height:50px;
+       position: fixed;
+      
+ 
+}
+
+/*Media Querie*/
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    /*Header*/
+    header {
+        height: 300px;
+        background-image: url('/Images/logos825.jpg')
+    }
+
+        header div.draftname {
+            top: 120px;
+            left: 73%;
+        }
+
+            header div.draftname h1 {
+                margin-bottom: 20px;
+            }
+
+}
+@media screen and (max-width: 825px) {
+    #lik h1 {
+        text-align: center;
+        font-size: 40px;
+    }
+    /*h1 {
+        font-size: .8em;
+    }*/
+    /*Header*/
+    header {
+        height: 300px;
+        background-image: url('/Images/logos825.jpg')
+    }
+    header div.draftname {
+        top:120px; left:73%;
+       
+    }
+
+        header div.draftname h1 {
+            margin-bottom: 20px;
+        }
+
+    @media screen and (max-width: 625px) {
+        #lik h1 {
+            text-align: center;
+            font-size: 40px;
+        }
+        #willbb {
+           
+            
+            font-size: 12px;
+            display: contents;
+            font-family:'Times New Roman';
+        }
+
+        #tp {
+            margin-right:250px;
+            font-size: 12px;
+            display: contents;
+            font-family: 'Times New Roman';
+        }
+        /*h1 {
+        font-size: .8em;
+    }*/
+        /*Header*/
+        header {
+            height: 122px;
+            background-image: url('/Images/logos475.jpg')
+        }
+
+            header div.draftname {
+                top: 120px;
+                left: 73%;
+            }
+
+                header div.draftname h1 {
+                    margin-bottom: 20px;
+                }
+        #links  {
+           
+            font-size: 10px;
+        }
+      #links #MD {
+               /* display:none;*/
+                margin-left: 40%;
+                font-size: 15px;
+                margin-top:5px;
+            }
+            #links #top {
+                 display:none;
+              
+            }
+    }
+    }
