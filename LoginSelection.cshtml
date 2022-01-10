@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.ModelView
+<head>
+
+
+</head>
+@{
+    Layout = "_HomeLayouts";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="page">
+    <div id="List" style="margin-top:50px">
+        <ul>
+            <li><a href="#">Add New User</a></li>
+            <li><a asp-controller="Top100" asp-action="Top">Update Top 100</a></li>
+            <li><a asp-controller="Mock" asp-action="Mockupdate">Update Mock </a></li>
+            <li><a asp-controller="Login" asp-action="Plogin">Add Player</a></li>
+            <li><a href="#">Add Podcast</a></li>
+            <li><a asp-controller="Mock" asp-action=PlayerUpdate>Player Mock Update</a></li>
+            <li><a href="#">Update Player Information</a></li>
+            <li><a href="#">Update  Suscriber</a></li>
+
+
+        </ul>
+
+    </div>
+    </div>
+

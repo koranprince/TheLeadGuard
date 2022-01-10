@@ -1,0 +1,118 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.LModelView
+@{
+    Layout = "_HomeLayouts";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://www.theleadguard.com/images/logos825.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="The Lead Guard" />
+    <meta name="twitter:creator" content="L.E.S.T" />
+    <meta property="og:url" content="http://www.theleadguard.com" />
+    <meta property="og:title" content="2021 NBA Mock Draft" />
+    <meta property="og:description" content="2021 NBA MOCK DRAFT" />
+</head>
+<div id="page">
+    <div id="lik"><h1>2021 NBA Mock Draft</h1><hr /></div>
+    <header>
+        @*<a class="logo" title="Lest" href="http://www.theleadguard.com">Lest</a>*@
+        <div class="Draftname">
+
+            @*<h1>NBA 2021 Draft</h1>*@
+
+        </div>
+
+    </header>
+
+    @*<div id="lik" class="twenty" style="border:medium;text-align:center"><img src="~/Images/nbadraft663.jpg" /></div>*@
+    <div id="links">
+        @* <a id="top" asp-controller="Top100" asp-action="index">Top 100 College Players</a> *@
+        <a id="top" asp-controller="Top100" asp-action="index">Top 100 College Players</a>
+        <a id="MD" asp-controller="Home" asp-action="indexs">Full Mock Draft</a>
+    </div>
+    <h1>Round 1</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Draft Position</th>
+                <th>Team</th>
+                <th>Name</th>
+                <th>Position</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var info in Model.draftOrders)
+            {
+
+
+
+                <tr>
+                    <td>@info.TeamPosition</td>
+                    <td><img src="@Url.Content(info.Team_Graphic)" width="75" height="60" /></td>
+                    <td>
+                        <a asp-controller="PlayerInfo" asp-action="PlayerInfo" asp-route-test="@info.Player_Id">
+                            @info.F_Name @info.L_Name
+
+                        </a>
+                    </td>
+
+                    <td>@info.Position</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+ @if (Model.draftOrders.Count > 14)
+ {
+
+
+        <h1>Round 2</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Draft Position</th>
+                    <th>Team</th>
+                    <th>Name</th>
+                    <th>Position</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var info in Model.draftOrdersTwo)
+                {
+
+
+                    <tr>
+                        <td>@info.TeamPosition</td>
+                        <td><img src="@Url.Content(info.Team_Graphic)" width="75" height="60" /></td>
+                        <td>
+                            <a asp-controller="PlayerInfo" asp-action="PlayerInfo" asp-route-test="@info.Player_Id">
+                                @info.F_Name @info.L_Name
+
+                            </a>
+                        </td>
+
+                        <td>@info.Position</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+ }
+        <div id="links">
+            @* <a id="top" asp-controller="Top100" asp-action="index">Top 100 College Players</a> *@
+            <a id="top" asp-controller="Top100" asp-action="index">Top 100 College Players</a>
+            <a id="MD" asp-controller="Home" asp-action="indexs">Full Mock Draft</a>
+        </div>
+
+    
+
+</div>

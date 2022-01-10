@@ -1,0 +1,25 @@
+﻿
+section aside {
+    width: 50%;
+    float: left;
+    
+}
+.Up {
+position:center;
+
+
+}
+
+#File {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#List{
+
+    margin-top:10000px;
+}
+#PD{
+
+    padding-left:20px;
+
+}

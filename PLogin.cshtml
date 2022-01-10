@@ -1,0 +1,130 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.ModelView
+
+@{
+    Layout = "_HomeLayouts";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="page">
+    <form asp-controller="Login" asp-action="te" enctype="multipart/form-data">
+        <aside>
+            <label>First Name</label>
+            <input asp-for=player.F_Name class="form-control w-25" type="text" />
+
+            <label>Last Name</label>
+            <input asp-for="player.L_Name" class="form-control w-25" type="text" />
+
+            @*<label>Position</label>
+                <input asp-for=PlayerInfo.Position class="form-control w-25" type="text" />
+
+                <label>Height</label>
+                <input asp-for="PlayerInfo.Height" class="form-control w-25" type="text" />
+
+                <label>Weight</label>
+                <input asp-for="PlayerInfo.Weight" class="form-control w-25" type="text" />
+
+                <label>Wingspan</label>
+                <input asp-for="PlayerInfo.Wingspan" class="form-control w-25" type="text" />
+
+                <label>College</label>
+                <input asp-for="PlayerInfo.College" class="form-control w-25" type="text" />
+
+                <label>Season</label>
+                <input asp-for="Pstats.Season" class="form-control w-25" type="text" />
+
+                <label>Games Played</label>
+                <input asp-for="Pstats.GP" class="form-control w-25" type="text" />
+
+                <label>Minutes Played</label>
+                <input asp-for="Pstats.MP" class="form-control w-25" type="text" />
+
+                <label>Field Goals Made</label>
+                <input asp-for="Pstats.FG" class="form-control w-25" type="text" />
+
+                <label>Field Goals Attempted</label>
+                <input asp-for="Pstats.FGA" class="form-control w-25" type="text" />
+
+                <label>Field Goal Percentage</label>
+                <input asp-for="Pstats.FGP" class="form-control w-25" type="text" />
+
+                <label>Two Pointers Made</label>
+                <input asp-for="Pstats.TPM" class="form-control w-25" type="text" />*@
+        </aside>
+
+
+        <aside>
+            @*<label>Two Pointers Attempted</label>
+                <input asp-for="Pstats.TPA" class="form-control w-25" type="text" />
+
+                <label>Two Pointers Percentage</label>
+                <input asp-for="Pstats.TPP" class="form-control w-25" type="text" />
+
+                <label>Three Pointers Made</label>
+                <input asp-for="Pstats.THPM" class="form-control w-25" type="text" />
+
+                <label>Three Pointers Attempted</label>
+                <input asp-for="Pstats.THPA" class="form-control w-25" type="text" />
+
+                <label>Three Pointers Percentage</label>
+                <input asp-for="Pstats.THPP" class="form-control w-25" type="text" />
+
+                <label>FreeThrow's Made</label>
+                <input asp-for="Pstats.FTM" class="form-control w-25" type="text" />
+
+                <label>FreeThrow Pointers Attempted</label>
+                <input asp-for="Pstats.FTA" class="form-control w-25" type="text" />
+
+                <label>FreeThrow  Percentage</label>
+                <input asp-for="Pstats.FTP" class="form-control w-25" type="text" />
+
+                <label>Offensive Rebounds</label>
+                <input asp-for="Pstats.ORebounds" class="form-control w-25" type="text" />
+
+                <label>Defensive Rebounds</label>
+                <input asp-for="Pstats.DRebounds" class="form-control w-25" type="text" />
+
+                <label>Total Rebounds</label>
+                <input asp-for="Pstats.TRebounds" class="form-control w-25" type="text" />
+
+                <label>Assist</label>
+                <input asp-for="Pstats.Assist" class="form-control w-25" type="text" />
+
+
+                <label>Steals</label>
+                <input asp-for="Pstats.Steals" class="form-control w-25" type="text" />
+
+                <label>Blocks</label>
+                <input asp-for="Pstats.Blocks" class="form-control w-25" type="text" />
+
+                <label>Turnovers</label>
+                <input asp-for="Pstats.TOS" class="form-control w-25" type="text" />
+
+                <label>Personal Fouls</label>
+                <input asp-for="Pstats.PFS" class="form-control w-25" type="text" />
+
+                <label>Points</label>
+                <input asp-for="Pstats.Points" class="form-control w-25" type="text" />
+
+
+                <div class="form-group">
+                    <label>Upload Image</label>
+                    <input asp-for="file" accept="image/*" type="text" />
+                    <input asp-for="Pimage.Player_ImageLocation" class="form-control w-25" type="text" />
+
+                </div>*@
+        </aside>
+
+
+
+
+
+
+
+        <button class="btn bg-success mb-3">Submit</button>
+
+
+    </form>
+
+</div>
+
+

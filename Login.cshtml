@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.Login
+@{
+    Layout = "_HomeLayouts";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="page">
+    <form asp-controller="Mock" asp-action="#">
+
+        <label>Email</label>
+        <input asp-for="Email" class="form-control w-25" type="text" />
+
+        <label>Password</label>
+        <input asp-for="Password" class="form-control w-25" type="password" />
+        <button class="btn bg-success mb-3" >Submit</button>
+
+
+    </form>
+
+</div>
+
+

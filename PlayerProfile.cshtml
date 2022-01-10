@@ -1,0 +1,377 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.PlayerProfile
+<link href="~/Customcss/PlayerProfile.css" rel="stylesheet" />
+
+
+@{
+    Layout = "_HomeLayouts";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:site" content="TheLeadGuard"/>
+<meta name="twitter:creator" content="TheLeadGuard" />
+<meta property="og:url" content="www.theleadguard.com/@Context.Request.Path.Value.Remove(0, 1)@Context.Request.QueryString" />
+<meta property="og:title" content="@Model.F_Name.ToUpper() @Model.L_Name.ToUpper()" />
+<meta property="og:description" content="@Model.Description" />
+<meta property="og:image" content="@Model.SitePlayerPic"/>
+<div id="page">
+    <div id="Playerinfo">
+        <section>
+
+            <aside style="margin-right:100px">
+                <label><strong>Name:</strong> @Model.F_Name.ToUpper() @Model.L_Name.ToUpper()</label>
+                <br />
+               
+
+
+                <label><strong>College:</strong> @Model.College.ToUpper()</label>
+                
+                <br />
+
+                <label><strong>Position: </strong>@Model.Position.ToUpper()</label>
+            </aside>
+
+            
+
+            <aside>
+                <div id="playerPicture">
+
+
+                    <img id="Playerimage" src="@Url.Content(Model.Player_ImageLocation)" @*width="100" height="100"*@ />
+
+                </div>
+
+            </aside>
+
+
+            <aside style="margin-left:100px">
+                @if (Model.Height.ToString().Count() == 1)
+                {
+
+                    <label><strong>Height:</strong> @Model.Height.ToString().Replace(Model.Height.ToString(), Model.Height.ToString().Replace(".", "'") + "'0")</label>
+                    <br />
+                    <label><strong>Weight:</strong> @Model.Weight.ToString()</label>
+                    <br />
+
+                }
+                else if (Model.Height.ToString().Count() > 3)
+                {
+
+                    <label><strong>Height:</strong> @Model.Height.ToString().Replace(".", "'")</label>
+                    <br />
+                    <label><strong>Weight:</strong> @Model.Weight.ToString()</label>
+                    <br />
+
+                }
+                @*@if (Model.Height.ToString().Count() > 3 )
+                {
+
+                    <label><strong>Height:</strong> @Model.Height.ToString().Replace(".", "'")</label>
+                    <br />
+                    <label><strong>Weight:</strong> @Model.Weight.ToString()</label>
+                    <br />
+
+                }*@
+                else if  (Model.Height.ToString().Count() == 3 && Model.Height.ToString() == "6.1" && @Model.Position.ToUpper().Contains("PF") || Model.Height.ToString().Count() == 3 && Model.Height.ToString() == "6.1" && @Model.Position.ToUpper().Contains("C") || Model.Height.ToString().Count() == 3 && Model.Height.ToString() == "6.1" && @Model.Position.ToUpper().Contains("F"))
+                {
+                    float test = Model.Wingspan.ToString().Count();
+                    <label><strong>Height:</strong> @Model.Height.ToString().Replace(Model.Height.ToString(), Model.Height.ToString().Replace(".", "'") + "0")</label>
+                    <label><strong>Weight:</strong> @Model.Weight.ToString()</label>
+                }
+
+                else @*(Model.Height.ToString().Count() == 3 && Model.Height.ToString()!= "6.1" && !@Model.Position.ToUpper().Contains("PF") || !@Model.Position.ToUpper().Contains("C"))*@
+                {
+
+                    string who = Model.Height.ToString();
+                    float test = Model.Height.ToString().Count();
+                    <label><strong>Height:</strong> @Model.Height.ToString().Replace(Model.Height.ToString(), Model.Height.ToString().Replace(".", "'"))</label>
+                    <label><strong>Weight:</strong> @Model.Weight.ToString()</label>
+                }
+
+                @if (Model.Wingspan.ToString().Count() == 1)
+                {
+                    <label><strong>Wingspan:</strong>@Model.Wingspan.ToString().Replace(Model.Wingspan.ToString(), Model.Wingspan.ToString().Replace(".", "'") + "'0")</label>
+                }
+
+                else if  (Model.Wingspan.ToString().Count() > 3)
+                {
+                    float test = Model.Wingspan.ToString().Count();
+                    <label><strong>Wingspan:</strong> @Model.Wingspan.ToString().Replace(".", "'")</label>
+                }
+                @*@if (Model.Wingspan.ToString().Count() == 3 && Model.Wingspan.ToString().Contains("6.1") & @Model.Position.ToUpper().Contains("PF") || @Model.Position.ToUpper().Contains("C"))
+                {
+                    float test = Model.Wingspan.ToString().Count();
+                    <label><strong>Wingspan:</strong> @Model.Wingspan.ToString().Replace(Model.Wingspan.ToString(), Model.Wingspan.ToString().Replace(".", "'") + "'0")</label>
+                }*@
+
+                else if (Model.Wingspan.ToString().Count() == 3 && Model.Wingspan.ToString() == "6.1" && @Model.Position.ToUpper().Contains("PF") || Model.Wingspan.ToString().Count() == 3 && Model.Wingspan.ToString() == "6.1" && @Model.Position.ToUpper().Contains("C")|| Model.Wingspan.ToString().Count() == 3 && Model.Wingspan.ToString() == "6.1" && @Model.Position.ToUpper().Contains("F"))
+                {
+                    float test = Model.Wingspan.ToString().Count();
+                    <label><strong>Wingspan:</strong> @Model.Wingspan.ToString().Replace(Model.Wingspan.ToString(), Model.Wingspan.ToString().Replace(".", "'") + "0")</label>
+                }
+
+                else @*(Model.Wingspan.ToString().Count() == 3 && Model.Wingspan.ToString() != "6.1" && !@Model.Position.ToUpper().Contains("PF") || !@Model.Position.ToUpper().Contains("C"))*@
+                {
+                    float test = Model.Wingspan.ToString().Count();
+                    <label><strong>Wingspan:</strong>  @Model.Wingspan.ToString().Replace(Model.Wingspan.ToString(), Model.Wingspan.ToString().Replace(".", "'"))</label>
+                }
+
+
+
+
+            </aside>
+
+
+        </section>
+
+    </div>
+
+
+    <div id="Statgraph">
+
+
+    </div>
+
+
+
+    <div id="SOS">
+
+
+    </div>
+
+    <div id="YoutubeVideo">
+
+
+    </div>
+
+    <div id="ArcTypes" style="overflow-x:auto;" class="table">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>G</th>
+                    <th>MP</th>
+                    <th>FG</th>
+                    <th>FGA</th>
+                    <th>FG%</th>
+                    <th>2P</th>
+                    <th>2PA</th>
+                    <th>2P%</th>
+                    <th>3P</th>
+                    <th>3PA</th>
+                    <th>3P%</th>
+                    <th>FT</th>
+                    <th>FTA</th>
+                    <th>FT%</th>
+                    <th>ORB</th>
+                    <th>DRB</th>
+                    <th>TRB</th>
+                    <th>AST</th>
+                    <th>STL</th>
+                    <th>BLK</th>
+                    <th>TOV</th>
+                    <th>PF</th>
+                    <th>PTS</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.Season.Year</td>
+                    <td>@Model.GP</td>
+                    <td>@Model.MP</td>
+                    <td>
+                        @Model.FG
+
+                    </td>
+
+                    <td>@Model.FGA</td>
+                    <td>@Model.FGP</td>
+                    <td>@Model.TPM</td>
+                    <td>
+                        @Model.TPA
+
+                    </td>
+
+                    <td>@Model.TPP</td>
+                    <td>@Model.THPM</td>
+                    <td>@Model.THPA</td>
+                    <td>
+                        @Model.THPP
+
+                    </td>
+
+                    <td>@Model.FTM</td>
+                    <td>@Model.FTA</td>
+                    <td>@Model.FTP</td>
+                    <td>@Model.ORebounds</td>
+                    <td>@Model.DRebounds</td>
+                    <td>@Model.TRebounds</td>
+
+                    <td>@Model.Assist</td>
+                    <td>@Model.Steals</td>
+                    <td>@Model.Blocks</td>
+
+                    <td>@Model.TOS</td>
+                    <td>@Model.PFS</td>
+                    <td>@Model.Points</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+    <div id="Mini">
+        <section>
+            <aside>
+                <label style="margin-right:10px"><strong><u>S</u></strong><br />@Model.Season.Year</label>
+                <br />
+                <label><strong><u>G</u></strong><br />@Model.GP</label>
+                <br />
+                <label><strong><u>MP</u></strong><br />@Model.MP</label>
+                <br />
+                <label><strong><u>FG</u></strong><br />@Model.FG</label>
+                <br />
+                <label><strong><u>FGA</u></strong><br />@Model.FGA</label>
+                <br />
+            </aside>
+            <aside>
+                <label><strong><u>FG%</u></strong><br />@Model.FGP</label>
+                <br />
+                <label><strong><u>2P</u></strong><br />@Model.TPM</label>
+                <br />
+                <label><strong><u>2PA</u></strong><br />@Model.TPA</label>
+                <br />
+                <label><strong><u>2P%</u></strong><br />@Model.TPP</label>
+                <br />
+                <label><strong><u>3P</u></strong><br />@Model.THPM</label>
+                <br />
+            </aside>
+            <aside>
+                <label><strong><u>3PA</u></strong><br />@Model.THPA</label>
+                <br />
+                <label><strong><u>3P%</u></strong><br />@Model.THPP</label>
+                <br />
+                <label><strong><u>FT</u></strong><br />@Model.FTM</label>
+                <br />
+                <label><strong><u>FTA</u></strong><br />@Model.FTA</label>
+                <br />
+                <label><strong><u>FT%</u></strong><br />@Model.FTP</label>
+                <br />
+            </aside>
+
+
+            @*<label>G</label>
+                <label>MP</label>
+                <label>FG</label>
+                <label>FGA</label>
+                <label>FG%</label>
+                <label>2P</label>
+                <label>2PA</label>
+                <label>2P%</label>
+                <label>3P</label>
+                <label>3PA</label>
+                <label>3P%</label>
+                <label>FT</label>
+                <label>FTA</label>
+                <label>FT%</label>
+                <label>OBR</label>
+                <label>DBR</label>
+                <label>TBR</label>
+                <label>AST</label>
+                <label>STL</label>
+                <label>BLK</label>
+                <label>TOV</label>
+                <label>PF</label>
+                <label>PTS</label>*@
+            <aside>
+                <label><strong><u>ORB</u></strong><br />@Model.ORebounds</label>
+                <br />
+                <label><strong><u>DRB</u></strong><br />@Model.DRebounds</label>
+                <br />
+                <label><strong><u>TRB</u></strong><br />@Model.TRebounds</label>
+                <br />
+                <label><strong><u>AST</u></strong><br />@Model.Assist</label>
+                <br />
+                <label><strong><u>STL</u></strong><br />@Model.Steals</label>
+                <br />
+            </aside>
+            <aside>
+                <label><strong><u>BLK</u></strong><br />@Model.Blocks</label>
+                <br />
+                <label><strong><u>TOV</u></strong><br />@Model.TOS</label>
+                <br />
+                <label><strong><u>PF</u></strong><br />@Model.PFS</label>
+                <br />
+                <label><strong><u>PTS</u></strong><br />@Model.Points</label>
+
+            </aside>
+        </section>
+    </div>
+
+    <br />
+    @*<div id="Mini2">
+            <label>@Model.Season.Year</label>
+            <label>@Model.GP</label>
+            <label>@Model.MP</label>
+            <label>
+                @Model.FG
+
+            </label>
+
+            <label>@Model.FGA</label>
+            <label>@Model.FGP</label>
+            <label>@Model.TPM</label>
+            <label>
+                @Model.TPA
+
+            </label>
+
+            <label>@Model.TPP</label>
+            <label>@Model.THPM</label>
+            <label>@Model.THPA</label>
+            <label>
+                @Model.THPP
+
+            </label>
+
+            <label>@Model.FTM</label>
+            <label>@Model.FTA</label>
+            <label>@Model.FTP</label>
+            <label>@Model.ORebounds</label>
+            <label>@Model.DRebounds</label>
+            <label>@Model.TRebounds</label>
+
+            <label>@Model.Assist</label>
+            <label>@Model.Steals</label>
+            <label>@Model.Blocks</label>
+
+            <label>@Model.TOS</label>
+            <label>@Model.PFS</label>
+            <label>@Model.Points</label>
+        </div>*@
+
+    <div id="ArcType">
+        <label><strong>Archetype: @Model.Arc_Type</strong></label>
+        <div>
+            <label><strong>Break Down:</strong></label>
+
+        </div>
+        <p id="ArcTypee">@Model.Description</p>
+    </div>
+    @*<footer>
+
+            Testing
+        </footer>*@
+</div>

@@ -1,0 +1,109 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model The_Lead_Guard.Models.LModelView
+    <head>
+        <script src="~/js/bootstrap.js"></script>
+
+    </head>
+    @{
+        Layout = "_HomeLayouts";
+    }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="page">
+
+    <form asp-controller="Mock" asp-action="PlayerMockUpdateRoundTwo">
+        <select name="Player" class="btn btn-secondary dropdown-toggle">
+
+
+            @foreach (var team in Model.players)
+            {
+
+                <option value="@team.Player_ID">@team.F_Name @team.L_Name</option>
+
+
+            }
+
+
+
+        </select>
+        @*<select name="round" class="btn btn-secondary dropdown-toggle">
+            <option  value="">Round</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>*@
+
+        <select name="Draftposition" class="btn btn-secondary dropdown-toggle">
+
+            @for (var i = 31; i < 60; i++)
+            {
+
+                <option value="@i">@i</option>
+
+
+            }
+        </select>
+        <button style="margin-top:12px" class="btn bg-success mb-3">Submit</button>
+        <a class="btn bg-success mb-3" style="margin-top:15px" asp-controller="Mock" asp-action="PlayerUpdate">Round 1</a>
+
+    </form>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Team</th>
+                <th>Player</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var name in Model.draftOrders)
+            {
+                <tr>
+
+                    <td>
+
+
+                        <label><img src="@Url.Content(name.Team_Graphic)" width="50" height="60" /></label>
+                        <input hidden name="team" value="@name.Team_ID" />
+
+
+
+
+
+
+
+                    </td>
+
+
+                    <td>
+                        <label>@name.F_Name @name.L_Name </label>
+
+
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+    @*<div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>*@
+
+
+
+
+
+
